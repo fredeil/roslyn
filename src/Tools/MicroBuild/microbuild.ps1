@@ -142,7 +142,7 @@ try {
             break;
         }
         "blob" {
-            Exec-Block { & (Join-Path $scriptDir "publish-blob.ps1") -configDir $configDir -blobFeedUrl $blobFeedUrl -blobFeedKey $blobFeedKey }
+            Exec-Block { & .\publish-blob.ps1 -configDir $configDir -blobFeedUrl $blobFeedUrl -blobFeedKey $blobFeedKey }
             break;
         }
         default {
