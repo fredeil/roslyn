@@ -142,8 +142,7 @@ try {
             break;
         }
         "blob" {
-            $scriptPath = Join-Path $repoDir "build\scripts\publish-blob.ps1"
-            Exec-Block { & $scriptPath -configDir $configDir -blobFeedUrl $blobFeedUrl -blobFeedKey $blobFeedKey }
+            Exec-Block { & (Join-Path $scriptDir "publish-blob.ps1") -configDir $configDir -blobFeedUrl $blobFeedUrl -blobFeedKey $blobFeedKey }
             break;
         }
         default {
