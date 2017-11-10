@@ -137,11 +137,11 @@ try {
     Get-Process vbcscompiler -ErrorAction SilentlyContinue | Stop-Process
 
     switch ($publishType) {
-        "vsts": {
+        "vsts" {
             Exec-Block { & .\publish-assets.ps1 -configDir $configDir -branchName $branchName -mygetApiKey $mygetApiKey -nugetApiKey $nugetApiKey -gitHubUserName $githubUserName -gitHubToken $gitHubToken -gitHubEmail $gitHubEmail -test:$(-not $official) }
             break;
         }
-        "blob": {
+        "blob" {
             $scriptPath = Join-Path $repoDir "build\scripts\publish-blob.ps1"
             Exec-Block { & $scriptPath -configDir $configDir -blobFeedUrl $blobFeedUrl -blobFeedKey $blobFeedKey }
             break;
